@@ -30,3 +30,4 @@ Thumbs.db
 # Archivos temporales
 *.tmp
 *.log
+reports/mapa_*.html
