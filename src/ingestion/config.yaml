@@ -1,0 +1,47 @@
+# config.yaml
+# Fuentes de datos del proyecto — Colombia Mercado Inmobiliario
+
+proyecto:
+  nombre: "Análisis Mercado Inmobiliario Urbano Colombia"
+  ciudades: ["Bogotá", "Medellín", "Cali"]
+  ruta_raw: "data/raw"
+  ruta_processed: "data/processed"
+  ruta_external: "data/external"
+
+fuentes_tabulares:
+
+  # En config.yaml, reemplaza la sección avaluos_catastro:
+  avaluos_catastro:
+    nombre: "Avalúos Catastrales por Municipio"
+    url: "https://www.datos.gov.co/resource/w6wx-inew.json"
+    formato: "json_api"
+    destino: "data/raw/avaluos_catastro.csv"
+    filtro_where: "nombre_municipio IN ('BOGOTÁ', 'MEDELLÍN', 'CALI')"
+
+  predios_urbanos:
+    nombre: "Estadísticas de Predios Urbanos"
+    url: "https://www.datos.gov.co/resource/gt2j-8ykr.json"
+    formato: "json_api"
+    destino: "data/raw/predios_urbanos.csv"
+    descripcion: "Número de predios, área y uso del suelo por municipio"
+
+  estratificacion:
+    nombre: "Estratificación Socioeconómica Urbana"
+    url: "https://www.datos.gov.co/resource/3gtz-ypzb.json"
+    formato: "json_api"
+    destino: "data/raw/estratificacion.csv"
+    descripcion: "Distribución de estratos 1-6 por municipio"
+
+fuentes_geoespaciales:
+
+  limites_municipios:
+    nombre: "Límites municipales Colombia"
+    url: "https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson"
+    formato: "geojson"
+    destino: "data/external/municipios_colombia.geojson"
+
+  localidades_bogota:
+    nombre: "Localidades de Bogotá"
+    url: "https://datosabiertos.bogota.gov.co/dataset/localidades-bogota-d-c/resource/localidades.geojson"
+    formato: "geojson"
+    destino: "data/external/localidades_bogota.geojson"
