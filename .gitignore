@@ -1,0 +1,32 @@
+# Datos crudos y procesados (pesados)
+data/raw/
+data/external/
+data/processed/*.gpkg
+
+# Archivos geoespaciales pesados
+*.shp
+*.dbf
+*.shx
+*.prj
+*.cpg
+*.sbn
+*.sbx
+
+# Entorno virtual
+venv/
+env/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Credenciales
+.env
+config_local.yaml
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos temporales
+*.tmp
+*.log
